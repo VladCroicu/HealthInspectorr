@@ -118,9 +118,9 @@ public class DBUtils {
 
                 String s1="Manager";
                 if(role.equals(s1)){
-                    changeScenetomanager(event,"loggedinmanager.fxml","Welcome!",username, role);}
+                    changeScenetomanager(event,"loggedinmanager.fxml","Welcome, Manager "+username+"!",username, role);}
                 else {
-                    changeScenetoinspector(event,"loggedininspector.fxml","Welcome!",username, role);
+                    changeScenetoinspector(event,"loggedininspector.fxml","Welcome, Inspector "+username+"!",username, role);
                 }
             }
         } catch (SQLException e){
@@ -188,9 +188,9 @@ public class DBUtils {
                     if(retrievedPasssword.equals(password)){
                         String s1="Manager";
                         if(retrievedRole.equals(s1)){
-                            changeScenetomanager(event,"loggedinmanager.fxml","Welcome!",username, retrievedRole);}
+                            changeScenetomanager(event,"loggedinmanager.fxml","Welcome, Manager "+username+"!",username, retrievedRole);}
                         else {
-                            changeScenetoinspector(event,"loggedininspector.fxml","Welcome!",username, retrievedRole);
+                            changeScenetoinspector(event,"loggedininspector.fxml","Welcome, Inspector "+username+"!",username, retrievedRole);
                         }
                     }
                     else{

@@ -8,6 +8,6 @@
    <children>
       <Label fx:id="label_welcome" layoutX="273.0" layoutY="58.0" text="Welcome!" />
       <Button fx:id="b_logout" layoutX="271.0" layoutY="187.0" mnemonicParsing="false" text="Log out" />
-      <Label fx:id="label_role" layoutX="220.0" layoutY="97.0" text="Succesfully signed in as Inspector" />
+      <Label fx:id="label_role" layoutX="220.0" layoutY="97.0" text="Succesfully signed in" />
    </children>
 </AnchorPane>
