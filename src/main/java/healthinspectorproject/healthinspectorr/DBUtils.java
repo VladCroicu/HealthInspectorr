@@ -40,7 +40,56 @@ public class DBUtils {
         stage.setScene(new Scene(root, 600,400));
         stage.show();
     }
+    public static void changeScenetoinspector(ActionEvent event, String fxmlFile, String title , String username, String role){
+        Parent root= null;
 
+        if(username!=null && role != null){
+            try {
+                FXMLLoader loader= new FXMLLoader(DBUtils.class.getResource(fxmlFile));
+                root = loader.load();
+                LoggedInInspectorController loggedInController = loader.getController();
+                loggedInController.set_user_information(username,role);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }else {
+            try{
+                root=FXMLLoader.load(DBUtils.class.getResource(fxmlFile));
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root, 600,400));
+        stage.show();
+    }
+    public static void changeScenetomanager(ActionEvent event, String fxmlFile, String title , String username, String role){
+        Parent root= null;
+
+        if(username!=null && role != null){
+            try {
+                FXMLLoader loader= new FXMLLoader(DBUtils.class.getResource(fxmlFile));
+                root = loader.load();
+                LoggedInManagerController loggedInController = loader.getController();
+                loggedInController.set_user_information(username,role);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }else {
+            try{
+                root=FXMLLoader.load(DBUtils.class.getResource(fxmlFile));
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root, 600,400));
+        stage.show();
+    }
 
     public static void signUpUser(ActionEvent event, String username, String password, String role){
     Connection connection =null;
@@ -67,7 +116,12 @@ public class DBUtils {
                 psInsert.setString(3,role);
                 psInsert.executeUpdate();
 
-                changeScene(event,"loggedin.fxml","Welcome!", username,role);
+                String s1="Manager";
+                if(role.equals(s1)){
+                    changeScenetomanager(event,"loggedinmanager.fxml","Welcome!",username, role);}
+                else {
+                    changeScenetoinspector(event,"loggedininspector.fxml","Welcome!",username, role);
+                }
             }
         } catch (SQLException e){
             e.printStackTrace();
@@ -132,7 +186,12 @@ public class DBUtils {
                 String retrievedRole=resultSet.getString("role");
 
                     if(retrievedPasssword.equals(password)){
-                        changeScene(event,"loggedin.fxml","Welcome!",username, retrievedRole);
+                        String s1="Manager";
+                        if(retrievedRole.equals(s1)){
+                            changeScenetomanager(event,"loggedinmanager.fxml","Welcome!",username, retrievedRole);}
+                        else {
+                            changeScenetoinspector(event,"loggedininspector.fxml","Welcome!",username, retrievedRole);
+                        }
                     }
                     else{
                         System.out.println("Passwords did not match");
