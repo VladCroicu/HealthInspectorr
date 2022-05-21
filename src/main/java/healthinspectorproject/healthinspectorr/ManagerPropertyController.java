@@ -21,42 +21,45 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class PropertySearchController implements Initializable {
+public class ManagerPropertyController implements Initializable {
 
 
     @FXML
-    private TableView <PropertySearchModel> companyTableView;
+    private TableView <ManagerPropertyModel> companyTableView;
 
     @FXML
-    private TableColumn <PropertySearchModel,Integer>propertyIDTableColumn;
+    private TableColumn <ManagerPropertyModel,Integer>propertyIDTableColumn;
     @FXML
-    private TableColumn <PropertySearchModel,String>managerUsernameTableColumn;
+    private TableColumn <ManagerPropertyModel,String>managerUsernameTableColumn;
     @FXML
-    private TableColumn <PropertySearchModel,String>companyNameTableColumn;
+    private TableColumn <ManagerPropertyModel,String>companyNameTableColumn;
     @FXML
-    private TableColumn <PropertySearchModel,String>propertyNameTableColumn;
+    private TableColumn <ManagerPropertyModel,String>propertyNameTableColumn;
     @FXML
-    private TableColumn<PropertySearchModel,String>adressTableColumn;
+    private TableColumn<ManagerPropertyModel,String>adressTableColumn;
     @FXML
-    private TableColumn<PropertySearchModel,String>phoneNumberTableColumn;
+    private TableColumn<ManagerPropertyModel,String>phoneNumberTableColumn;
     @FXML
-    private TableColumn<PropertySearchModel,String>statusTableColumn;
+    private TableColumn<ManagerPropertyModel,String>statusTableColumn;
     @FXML
-    private TableColumn<PropertySearchModel,String>descriptionTableColumn;
+    private TableColumn<ManagerPropertyModel,String>descriptionTableColumn;
     @FXML
     private TextField keywordsTextField;
 
     @FXML
     private Button bt_back;
 
-    ObservableList<PropertySearchModel> propertySearchModelObservableList= FXCollections.observableArrayList();
+    ObservableList<ManagerPropertyModel> ManagerPropertyModelObservableList= FXCollections.observableArrayList();
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resource) {
 
+
         DatabaseConnection connectNow=new DatabaseConnection();
         Connection connectDB=connectNow.getDBConnection();
-        String productViewQuery="SELECT company_id,ManagerUsername,CompanyName,PropertyName,Adress,PhoneNumber,Status,Description FROM companies;";
+        String productViewQuery="SELECT company_id,ManagerUsername,CompanyName,PropertyName,Adress,PhoneNumber,Status,Description FROM companies WHERE ManagerUsername='ionion';";
 
 
 
@@ -76,7 +79,7 @@ public class PropertySearchController implements Initializable {
                 String queryStatus=queryOutput.getString("Status");
                 String queryDescription=queryOutput.getString("Description");
 
-                propertySearchModelObservableList.add(new PropertySearchModel(queryID,queryManagerUsername,queryCompanyName,queryPropertyName,queryAdress,queryPhoneNumber,queryStatus,queryDescription));
+                ManagerPropertyModelObservableList.add(new ManagerPropertyModel(queryID,queryManagerUsername,queryCompanyName,queryPropertyName,queryAdress,queryPhoneNumber,queryStatus,queryDescription));
             }
             propertyIDTableColumn.setCellValueFactory(new PropertyValueFactory<>("propertyID"));
             managerUsernameTableColumn.setCellValueFactory(new PropertyValueFactory<>("managerUsername"));
@@ -87,9 +90,9 @@ public class PropertySearchController implements Initializable {
             statusTableColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
             descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
 
-            companyTableView.setItems(propertySearchModelObservableList);
+            companyTableView.setItems(ManagerPropertyModelObservableList);
 
-            FilteredList <PropertySearchModel> filteredData=new FilteredList<>(propertySearchModelObservableList,b->true);
+            FilteredList <ManagerPropertyModel> filteredData=new FilteredList<>(ManagerPropertyModelObservableList,b->true);
             keywordsTextField.textProperty().addListener((observable,oldValue,newValue)->{
                 filteredData.setPredicate(productSearchModel -> {
 
@@ -120,19 +123,19 @@ public class PropertySearchController implements Initializable {
                 });
             });
 
-            SortedList<PropertySearchModel> sortedData = new SortedList<>(filteredData);
+            SortedList<ManagerPropertyModel> sortedData = new SortedList<>(filteredData);
             sortedData.comparatorProperty().bind(companyTableView.comparatorProperty());
             companyTableView.setItems(sortedData);
         }
         catch (SQLException e){
-            Logger.getLogger(PropertySearchController.class.getName()).log(Level.SEVERE,null,e);
+            Logger.getLogger(ManagerPropertyController.class.getName()).log(Level.SEVERE,null,e);
             e.printStackTrace();
         }
 
         bt_back.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "loggedininspector.fxml","Log in!",null,null);
+                DBUtils.changeScene(event, "loggedinmanager.fxml","Log in!",null,null);
 
             }
         });

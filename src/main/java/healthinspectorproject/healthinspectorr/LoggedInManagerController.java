@@ -19,7 +19,18 @@ public class LoggedInManagerController implements Initializable {
 
     @FXML
     private Label label_role;
-
+    @FXML
+    private Label l_name;
+    @FXML
+    private Label l_surname;
+    @FXML
+    private Label l_phone;
+    @FXML
+    private Label l_company;
+    @FXML
+    private Label l_email;
+    @FXML
+    private Button bt_gotoyourproperties;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -30,6 +41,13 @@ public class LoggedInManagerController implements Initializable {
 
             }
         });
+        bt_gotoyourproperties.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "managerpropertyfinder.fxml","Companies Page",null,null);
+
+            }
+        });
     }
 
 
@@ -37,5 +55,6 @@ public class LoggedInManagerController implements Initializable {
         label_welcome.setText("This is the main page!");
         label_role.setText("Log out when you finish your work!");
     }
+
 
 }

@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.LoggedInManagerController">
     <children>
-        <Label fx:id="label_welcome" layoutX="373.0" layoutY="14.0" text="Welcome!" />
+        <Label fx:id="label_welcome" layoutX="276.0" layoutY="5.0" text="Welcome!" />
         <Button fx:id="b_logout" layoutY="373.0" mnemonicParsing="false" text="Log out" />
         <Label fx:id="label_role" layoutX="65.0" layoutY="377.0" text="Succesfully signed in as Manager" />
       <ImageView fitHeight="70.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
@@ -16,5 +16,6 @@
             <Image url="@../../Images/manager.jpg" />
          </image>
       </ImageView>
+      <Button fx:id="bt_gotoyourproperties" layoutY="348.0" mnemonicParsing="false" text="Go to your properties" />
     </children>
 </AnchorPane>
