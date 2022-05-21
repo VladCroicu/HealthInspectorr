@@ -3,16 +3,24 @@ package healthinspectorproject.healthinspectorr;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoggedInInspectorController implements Initializable {
     @FXML
     private Button b_logout;
+    @FXML
+    private Button bt_companies;
 
     @FXML
     private Label label_welcome;
@@ -30,6 +38,13 @@ public class LoggedInInspectorController implements Initializable {
 
             }
         });
+        bt_companies.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "propertyfinder.fxml","Companies Page",null,null);
+
+            }
+        });
     }
 
 
@@ -37,5 +52,12 @@ public class LoggedInInspectorController implements Initializable {
         label_welcome.setText("This is the main page!");
         label_role.setText("Log out when you finish your work!");
     }
+    /*
+    public void bt_companiesButtonOnAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("propertyfinder.fxml"));
 
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root, 800,400));
+        stage.show();
+    }*/
 }

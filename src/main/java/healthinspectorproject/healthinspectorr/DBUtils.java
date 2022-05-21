@@ -37,7 +37,7 @@ public class DBUtils {
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setTitle(title);
-        stage.setScene(new Scene(root, 600,400));
+        stage.setScene(new Scene(root, 800,400));
         stage.show();
     }
     public static void changeScenetoinspector(ActionEvent event, String fxmlFile, String title , String username, String role){
@@ -62,7 +62,7 @@ public class DBUtils {
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setTitle(title);
-        stage.setScene(new Scene(root, 600,400));
+        stage.setScene(new Scene(root, 800,400));
         stage.show();
     }
     public static void changeScenetomanager(ActionEvent event, String fxmlFile, String title , String username, String role){
@@ -87,7 +87,7 @@ public class DBUtils {
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setTitle(title);
-        stage.setScene(new Scene(root, 600,400));
+        stage.setScene(new Scene(root, 800,400));
         stage.show();
     }
 
