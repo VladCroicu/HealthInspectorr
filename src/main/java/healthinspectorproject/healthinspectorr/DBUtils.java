@@ -90,6 +90,81 @@ public class DBUtils {
         stage.setScene(new Scene(root, 800,400));
         stage.show();
     }
+    public static void addProperty(ActionEvent event,String ManagerUsername, String CompanyName, String PropertyName,String Adress,String PhoneNumber,String Status, String Description)
+    {
+        Connection connection =null;
+        PreparedStatement psInsert=null;
+        PreparedStatement psCheckPropertyExists=null;
+        ResultSet resultSet =null;
+
+        try {
+            connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/healthinspectordb","root","passwordroot1");
+            psCheckPropertyExists=connection.prepareStatement("SELECT * FROM companies WHERE PropertyName=?");
+            psCheckPropertyExists.setString(1,PropertyName);
+            resultSet=psCheckPropertyExists.executeQuery();
+
+            if(resultSet.isBeforeFirst()){
+                System.out.println("Property name already exists");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("You can not use this Property Name.");
+                alert.show();
+            }
+            else {
+
+                psInsert=connection.prepareStatement("INSERT INTO companies(ManagerUsername,CompanyName,PropertyName,Adress,PhoneNumber,Status,Description) VALUES (?,?,?,?,?,?,?)");
+                psInsert.setString(1,ManagerUsername);
+                psInsert.setString(2,CompanyName);
+                psInsert.setString(3,PropertyName);
+                psInsert.setString(4,Adress);
+                psInsert.setString(5,PhoneNumber);
+                psInsert.setString(6,Status);
+                psInsert.setString(7,Description);
+                psInsert.executeUpdate();
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Added Property Succesfully");
+                alert.show();
+
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            if(resultSet!=null){
+                try{
+                    resultSet.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+            if( psCheckPropertyExists!= null){
+                try{
+                    psCheckPropertyExists.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+
+            if( psInsert!= null){
+                try{
+                    psInsert.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+
+            if( connection!= null){
+                try{
+                    connection.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+
+        }
+
+    }
+
+
 
     public static void signUpUser(ActionEvent event, String username, String password, String role){
     Connection connection =null;
