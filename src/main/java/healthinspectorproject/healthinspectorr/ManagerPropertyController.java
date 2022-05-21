@@ -7,9 +7,11 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -45,9 +47,13 @@ public class ManagerPropertyController implements Initializable {
     private TableColumn<ManagerPropertyModel,String>descriptionTableColumn;
     @FXML
     private TextField keywordsTextField;
-
+    @FXML
+    private TextField tf_username;
     @FXML
     private Button bt_back;
+    @FXML
+    private Button set_username;
+
 
     ObservableList<ManagerPropertyModel> ManagerPropertyModelObservableList= FXCollections.observableArrayList();
 
@@ -59,7 +65,7 @@ public class ManagerPropertyController implements Initializable {
 
         DatabaseConnection connectNow=new DatabaseConnection();
         Connection connectDB=connectNow.getDBConnection();
-        String productViewQuery="SELECT company_id,ManagerUsername,CompanyName,PropertyName,Adress,PhoneNumber,Status,Description FROM companies WHERE ManagerUsername='ionion';";
+                String productViewQuery="SELECT company_id,ManagerUsername,CompanyName,PropertyName,Adress,PhoneNumber,Status,Description FROM companies;";
 
 
 
@@ -139,6 +145,8 @@ public class ManagerPropertyController implements Initializable {
 
             }
         });
+
+
     }
 
 

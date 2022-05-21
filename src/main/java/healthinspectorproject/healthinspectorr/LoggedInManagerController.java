@@ -31,6 +31,9 @@ public class LoggedInManagerController implements Initializable {
     private Label l_email;
     @FXML
     private Button bt_gotoyourproperties;
+
+    @FXML
+    private Button b_addProperty;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -44,7 +47,15 @@ public class LoggedInManagerController implements Initializable {
         bt_gotoyourproperties.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "managerpropertyfinder.fxml","Companies Page",null,null);
+                DBUtils.changeScene(event, "enterusername.fxml","EnterUsername",null,null);
+
+            }
+        });
+
+        b_addProperty.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "addproperty.fxml","AddProperty",null,null);
 
             }
         });
@@ -52,7 +63,7 @@ public class LoggedInManagerController implements Initializable {
 
 
     public void set_user_information (String username, String role){
-        label_welcome.setText("This is the main page!");
+        label_welcome.setText("This is the main page,"+username+"!");
         label_role.setText("Log out when you finish your work!");
     }
 
