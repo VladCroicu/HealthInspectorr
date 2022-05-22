@@ -39,7 +39,6 @@ public class EnterUsername {
         ManagerPropertyController managerPropertyController = loader.getController();
         managerPropertyController.displayName(username);
 
-        //root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

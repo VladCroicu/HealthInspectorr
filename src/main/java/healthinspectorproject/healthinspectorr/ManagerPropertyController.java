@@ -46,7 +46,7 @@ public class ManagerPropertyController implements Initializable {
     @FXML
     private TableColumn<ManagerPropertyModel,String>descriptionTableColumn;
     @FXML
-    private TextField keywordsTextField;
+    private Label keywordsTextField;
 
     @FXML
     private Button bt_back;

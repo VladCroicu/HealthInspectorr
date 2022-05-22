@@ -5,12 +5,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.ManagerPropertyController">
     <children>
-        <TableView fx:id="companyTableView" layoutY="40.0" prefHeight="400.0" prefWidth="2046.0">
+        <TableView fx:id="companyTableView" layoutY="40.0" prefHeight="400.0" prefWidth="1678.0">
             <columns>
                 <TableColumn fx:id="propertyIDTableColumn" prefWidth="28.800048828125" text="ID" />
                 <TableColumn fx:id="managerUsernameTableColumn" prefWidth="129.60000610351562" text="Manager Username" />
@@ -23,14 +22,11 @@
             </columns>
         </TableView>
         <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="89.0" text="SearchProperty" />
-        <TextField fx:id="keywordsTextField" layoutX="113.0" layoutY="10.0" prefHeight="25.0" prefWidth="303.0" promptText="Enter the keywords....">
-         <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
-         </cursor></TextField>
         <Button fx:id="bt_back" layoutX="745.0" layoutY="10.0" mnemonicParsing="false" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Label fx:id="nameLabel" layoutX="524.0" layoutY="14.0" prefHeight="17.0" prefWidth="73.0" text="name" />
+      <Label fx:id="keywordsTextField" layoutX="158.0" layoutY="14.0" />
     </children>
 </Pane>
