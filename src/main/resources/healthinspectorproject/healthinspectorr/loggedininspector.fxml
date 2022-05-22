@@ -18,7 +18,7 @@
       </ImageView>
       <Button fx:id="bt_companies" layoutX="11.0" layoutY="333.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Companies" />
       <Label layoutX="96.0" layoutY="337.0" text="Click here to go to the companies table" />
-      <Button layoutX="11.0" layoutY="301.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Make Appointment" />
+      <Button fx:id="make_appt" layoutX="11.0" layoutY="301.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Make Appointment" />
       <Button layoutX="11.0" layoutY="268.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Give Review" />
     </children>
 </AnchorPane>
