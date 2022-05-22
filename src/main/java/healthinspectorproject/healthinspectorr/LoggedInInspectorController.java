@@ -27,6 +27,8 @@ public class LoggedInInspectorController implements Initializable {
 
     @FXML
     private Label label_role;
+    @FXML
+    private Button make_appt;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -45,6 +47,14 @@ public class LoggedInInspectorController implements Initializable {
 
             }
         });
+        make_appt.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "makeappointment.fxml","Make Appointment",null,null);
+
+            }
+        });
+
     }
 
 
