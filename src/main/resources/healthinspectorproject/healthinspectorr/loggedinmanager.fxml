@@ -9,14 +9,16 @@
 <AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.LoggedInManagerController">
     <children>
         <Label fx:id="label_welcome" layoutX="276.0" layoutY="5.0" text="Welcome!" />
-        <Button fx:id="b_logout" layoutY="373.0" mnemonicParsing="false" text="Log out" />
+        <Button fx:id="b_logout" layoutY="373.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Log out" />
         <Label fx:id="label_role" layoutX="65.0" layoutY="377.0" text="Succesfully signed in as Manager" />
       <ImageView fitHeight="70.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/manager.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="bt_gotoyourproperties" layoutY="348.0" mnemonicParsing="false" text="Go to your properties" AnchorPane.leftAnchor="0.0" />
-      <Button fx:id="b_addProperty" layoutX="3.0" layoutY="323.0" mnemonicParsing="false" text="Add a new property" AnchorPane.leftAnchor="0.0" />
+      <Button fx:id="bt_gotoyourproperties" layoutY="348.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Go to your properties" AnchorPane.leftAnchor="0.0" />
+      <Button fx:id="b_addProperty" layoutX="3.0" layoutY="323.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Add a new property" AnchorPane.leftAnchor="0.0" />
+      <Button layoutX="-2.0" layoutY="298.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Accept Appointment" />
+      <Button layoutX="-4.0" layoutY="273.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Reject Appointment" />
     </children>
 </AnchorPane>
