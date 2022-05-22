@@ -4,10 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -44,7 +41,16 @@ public class MakeAppointmentController implements Initializable {
         bt_make_app.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                if(!tf_getpn.getText().trim().isEmpty() && !my_date.getValue().toString().trim().isEmpty()){
                 DBUtils.addAppointment(event,tf_getpn.getText(),"Appointment made",my_date.getValue().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy")));
+            }else {
+                    System.out.println("Please fill in all information");
+                    Alert alert= new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Please fill in all information");
+                    alert.show();
+
+                }
+
 
             }
         });

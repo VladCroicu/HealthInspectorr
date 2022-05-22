@@ -30,6 +30,9 @@ public class LoggedInInspectorController implements Initializable {
     @FXML
     private Button make_appt;
 
+    @FXML
+    private Button bt_giveRev;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -51,6 +54,13 @@ public class LoggedInInspectorController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 DBUtils.changeScene(event, "makeappointment.fxml","Make Appointment",null,null);
+
+            }
+        });
+        bt_giveRev.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "givereview.fxml","GiveReview",null,null);
 
             }
         });

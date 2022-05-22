@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.NavigableMap;
 
 public class DBUtils {
 
@@ -91,6 +92,73 @@ public class DBUtils {
         stage.show();
     }
 
+    public static void giveReview(ActionEvent event, String PropertyName,String Status, String Review){
+        Connection connection=null;
+        PreparedStatement psInsert=null;
+        PreparedStatement psCheckPropertyExists=null;
+        ResultSet resultSet=null;
+
+        try{
+            connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/healthinspectordb","root","passwordroot1");
+            psCheckPropertyExists=connection.prepareStatement("SELECT * FROM companies WHERE PropertyName=?");
+            psCheckPropertyExists.setString(1,PropertyName);
+            resultSet=psCheckPropertyExists.executeQuery();
+
+            if(resultSet.isBeforeFirst())
+            {
+                psInsert=connection.prepareStatement("update companies SET Status='"+Status+"',Description='"+Review+"' where PropertyName='"+PropertyName+"'");
+                //  psInsert=connection.prepareStatement("update companies SET Status='"+?+"',Description='"+?+"' where PropertyName='"+?+"';");
+                // psInsert.setString(6,Status);
+                // psInsert.setString(7,Date);
+                psInsert.executeUpdate();
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Review given succesfully");
+                alert.show();
+
+            }
+            else {
+                System.out.println("Property name does not exists");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("No record of this this Property Name.");
+                alert.show();
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            if(resultSet!=null){
+                try{
+                    resultSet.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+            if( psCheckPropertyExists!= null){
+                try{
+                    psCheckPropertyExists.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+
+            if( psInsert!= null){
+                try{
+                    psInsert.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+
+            if( connection!= null){
+                try{
+                    connection.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+
+        }
+
+    }
     public static void addAppointment(ActionEvent event, String PropertyName, String Status, String Date){
     Connection connection=null;
     PreparedStatement psInsert=null;
@@ -185,8 +253,8 @@ public class DBUtils {
                 psInsert.setString(3,PropertyName);
                 psInsert.setString(4,Adress);
                 psInsert.setString(5,PhoneNumber);
-                psInsert.setString(6,Status);
-                psInsert.setString(7,Description);
+                psInsert.setString(6,"Not Inspected");
+                psInsert.setString(7,"Not inspected");
                 psInsert.executeUpdate();
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setContentText("Added Property Succesfully");
