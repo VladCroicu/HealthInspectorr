@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="healthinspectorproject.healthinspectorr.RejectAppointmentController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.RejectAppointmentController">
+   <children>
+      <Button fx:id="bt_back" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="bt_reject" layoutX="534.0" layoutY="373.0" mnemonicParsing="false" text="Reject!">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="240.0" layoutY="25.0" text="Reject an appointment" />
+      <Label layoutX="135.0" layoutY="110.0" text="Property Name" />
+      <Label layoutX="135.0" layoutY="159.0" text="Reason" />
+      <TextField fx:id="tf_pn" layoutX="266.0" layoutY="106.0" promptText="Enter the property name" />
+      <TextField fx:id="tf_reason" layoutX="267.0" layoutY="155.0" promptText="Enter a reason" />
+   </children>
 </AnchorPane>
