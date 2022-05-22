@@ -34,6 +34,9 @@ public class LoggedInManagerController implements Initializable {
     private Button bt_acceptapp;
     @FXML
     private Button bt_rejectapp;
+
+    @FXML
+    private Button bt_deltep;
     @FXML
     private Button bt_gotoyourproperties;
 
@@ -75,6 +78,14 @@ public class LoggedInManagerController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 DBUtils.changeScene(event, "acceptappointment.fxml","AddProperty",null,null);
+
+            }
+        });
+
+        bt_deltep.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "deleteproperty.fxml","AddProperty",null,null);
 
             }
         });

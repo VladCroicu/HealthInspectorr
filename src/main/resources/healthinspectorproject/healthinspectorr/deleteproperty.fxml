@@ -6,12 +6,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.DeletePropertyController">
    <children>
       <Label layoutX="254.0" layoutY="23.0" text="Delete a property" />
       <Label layoutX="159.0" layoutY="136.0" text="Property Name:" />
-      <TextField layoutX="273.0" layoutY="132.0" promptText="Enter the property name" />
+      <TextField fx:id="tf_pn" layoutX="273.0" layoutY="132.0" promptText="Enter the property name" />
       <Button fx:id="bt_back" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />

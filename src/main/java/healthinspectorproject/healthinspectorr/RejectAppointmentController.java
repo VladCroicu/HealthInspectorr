@@ -31,7 +31,7 @@ public class RejectAppointmentController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if(!tf_pn.getText().trim().isEmpty() && !tf_pn.getText().trim().isEmpty()){
-                    DBUtils.acceptAppointment(event,tf_pn.getText(),"Appointment rejected",tf_reason.getText());
+                    DBUtils.denyAppointment(event,tf_pn.getText(),"Appointment rejected",tf_reason.getText());
                 }else {
                     System.out.println("Please fill in all information");
                     Alert alert= new Alert(Alert.AlertType.ERROR);
