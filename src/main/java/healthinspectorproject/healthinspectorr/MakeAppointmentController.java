@@ -57,7 +57,7 @@ public class MakeAppointmentController implements Initializable {
         bt_back.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "loggedininspector.fxml","Log in!",null,null);
+                DBUtils.changeScene(event, "loggedininspector.fxml","InspectorMain",null,null);
 
             }
         });
