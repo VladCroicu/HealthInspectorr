@@ -24,7 +24,7 @@ public class SignUpController implements Initializable {
     @FXML
     private TextField tf_username;
     @FXML
-    private TextField tf_password;
+    private PasswordField tf_password;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

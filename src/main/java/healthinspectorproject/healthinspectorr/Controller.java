@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
@@ -19,7 +20,7 @@ private Button b_login;
 @FXML
 private TextField tf_username;
 @FXML
-private TextField tf_password;
+private PasswordField tf_password;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

@@ -33,6 +33,7 @@ public class LoggedInInspectorController implements Initializable {
     @FXML
     private Button bt_giveRev;
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -60,7 +61,7 @@ public class LoggedInInspectorController implements Initializable {
         bt_giveRev.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "givereview.fxml","GiveReview",null,null);
+                DBUtils.changeScene(event, "givereview.fxml","Give Review",null,null);
 
             }
         });
@@ -69,7 +70,7 @@ public class LoggedInInspectorController implements Initializable {
 
 
     public void set_user_information (String username, String role){
-        label_welcome.setText("This is the main page,"+username+"!");
+        label_welcome.setText("This is the main page,Inspector"+username+"!");
         label_role.setText("Log out when you finish your work!");
 
     }

@@ -115,7 +115,7 @@ String uzer;
 
                     if(productSearchModel.getManagerUsername().toLowerCase().indexOf(searchkeyword) > -1){
                         return true;
-                    } else if (productSearchModel.getCompanyName().toLowerCase().indexOf(searchkeyword) > -1) {
+                    } /*else if (productSearchModel.getCompanyName().toLowerCase().indexOf(searchkeyword) > -1) {
                         return true;
                     } else if (productSearchModel.getPropertyName().toLowerCase().indexOf(searchkeyword) > -1) {
                         return true;
@@ -127,7 +127,7 @@ String uzer;
                         return true;
                     }else if(productSearchModel.getDescription().toLowerCase().indexOf(searchkeyword) > -1){
                         return true;
-                    }else {
+                    }*/else {
                         return false;
                     }
 
