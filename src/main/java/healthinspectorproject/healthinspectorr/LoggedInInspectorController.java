@@ -51,6 +51,7 @@ public class LoggedInInspectorController implements Initializable {
     public void set_user_information (String username, String role){
         label_welcome.setText("This is the main page,"+username+"!");
         label_role.setText("Log out when you finish your work!");
+
     }
 
 }

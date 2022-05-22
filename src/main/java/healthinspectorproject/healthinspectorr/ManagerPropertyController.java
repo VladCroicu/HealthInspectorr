@@ -47,24 +47,29 @@ public class ManagerPropertyController implements Initializable {
     private TableColumn<ManagerPropertyModel,String>descriptionTableColumn;
     @FXML
     private TextField keywordsTextField;
-    @FXML
-    private TextField tf_username;
+
     @FXML
     private Button bt_back;
-    @FXML
-    private Button set_username;
 
+    @FXML
+    Label nameLabel;
 
     ObservableList<ManagerPropertyModel> ManagerPropertyModelObservableList= FXCollections.observableArrayList();
-
-
+String uzer;
+    public void displayName(String username) {
+        keywordsTextField.setText(username);
+        nameLabel.setText("Hello,"+username+"!");
+        //System.out.println(uzer);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resource) {
+        //System.out.println(uzer);
 
 
         DatabaseConnection connectNow=new DatabaseConnection();
         Connection connectDB=connectNow.getDBConnection();
+        System.out.println(nameLabel.getText());
                 String productViewQuery="SELECT company_id,ManagerUsername,CompanyName,PropertyName,Adress,PhoneNumber,Status,Description FROM companies;";
 
 

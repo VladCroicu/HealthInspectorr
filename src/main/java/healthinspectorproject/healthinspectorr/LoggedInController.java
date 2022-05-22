@@ -38,4 +38,5 @@ public void set_user_information (String username, String role){
         label_role.setText("Your role is "+role+"!");
 }
 
+
 }
