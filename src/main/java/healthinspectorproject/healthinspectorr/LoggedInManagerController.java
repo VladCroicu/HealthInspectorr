@@ -20,17 +20,6 @@ public class LoggedInManagerController implements Initializable {
     @FXML
     private Label label_role;
     @FXML
-    private Label l_name;
-    @FXML
-    private Label l_surname;
-    @FXML
-    private Label l_phone;
-    @FXML
-    private Label l_company;
-    @FXML
-    private Label l_email;
-
-    @FXML
     private Button bt_acceptapp;
     @FXML
     private Button bt_rejectapp;
@@ -42,6 +31,8 @@ public class LoggedInManagerController implements Initializable {
 
     @FXML
     private Button b_addProperty;
+    @FXML
+    private Button bt_add;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -81,7 +72,13 @@ public class LoggedInManagerController implements Initializable {
 
             }
         });
+        bt_add.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "addinfomanager.fxml","Add Information",null,null);
 
+            }
+        });
         bt_deltep.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

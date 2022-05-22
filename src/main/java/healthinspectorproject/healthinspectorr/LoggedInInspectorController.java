@@ -32,6 +32,8 @@ public class LoggedInInspectorController implements Initializable {
 
     @FXML
     private Button bt_giveRev;
+@FXML
+private Button bt_add;
 
 
     @Override
@@ -65,7 +67,13 @@ public class LoggedInInspectorController implements Initializable {
 
             }
         });
+        bt_add.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "addinfoinspector.fxml","Add Information",null,null);
 
+            }
+        });
     }
 
 
