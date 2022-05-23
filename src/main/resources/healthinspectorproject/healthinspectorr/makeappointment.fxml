@@ -4,16 +4,23 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.MakeAppointmentController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: E0E9F8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.MakeAppointmentController">
    <children>
       <Label fx:id="make_app" layoutX="14.0" layoutY="14.0" text="Make an appointment" />
       <Label layoutX="45.0" layoutY="113.0" text="Date:" />
       <Label layoutX="45.0" layoutY="158.0" text="Property Name:" />
       <DatePicker fx:id="my_date" layoutX="151.0" layoutY="109.0" onAction="#getDate" promptText="Enter a date" />
       <TextField fx:id="tf_getpn" layoutX="151.0" layoutY="154.0" promptText="Enter a property name" />
-      <Button fx:id="bt_make_app" layoutX="458.0" layoutY="340.0" mnemonicParsing="false" text="Make The appointment!" />
+      <Button fx:id="bt_make_app" layoutX="610.0" layoutY="361.0" mnemonicParsing="false" text="Make The appointment!" />
       <Button fx:id="bt_back" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Back" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="627.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/calendar.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

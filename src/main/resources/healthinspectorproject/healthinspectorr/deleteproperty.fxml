@@ -4,22 +4,34 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.DeletePropertyController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: E0E9F8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.DeletePropertyController">
    <children>
-      <Label layoutX="254.0" layoutY="23.0" text="Delete a property" />
+      <Label layoutX="344.0" layoutY="25.0" text="Delete a property" />
       <Label layoutX="159.0" layoutY="136.0" text="Property Name:" />
-      <TextField fx:id="tf_pn" layoutX="273.0" layoutY="132.0" promptText="Enter the property name" />
+      <TextField fx:id="tf_pn" layoutX="273.0" layoutY="132.0" prefHeight="26.0" prefWidth="289.0" promptText="Enter the name of the property you want to delete" />
       <Button fx:id="bt_back" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="bt_delete" layoutX="534.0" layoutY="361.0" mnemonicParsing="false" text="Delete!">
+      <Button fx:id="bt_delete" layoutX="552.0" layoutY="340.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" text="Delete!">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="636.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/property.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="424.0" layoutY="315.0" text="WARNING! THE RESULT OF THIS ACTION IS PERMANENT" textFill="RED">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>

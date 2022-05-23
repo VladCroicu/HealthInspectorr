@@ -5,8 +5,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.AcceptAppointmentController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: E0E9F8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.AcceptAppointmentController">
    <children>
       <Label layoutX="214.0" layoutY="27.0" prefHeight="18.0" prefWidth="147.0" text="Accept Appointment" />
       <Label layoutX="98.0" layoutY="181.0" prefHeight="18.0" prefWidth="105.0" text="Property  Name" />
@@ -15,11 +16,16 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="bt_accept" layoutX="509.0" layoutY="355.0" mnemonicParsing="false" text="Accept!">
+      <Button fx:id="bt_accept" layoutX="587.0" layoutY="355.0" mnemonicParsing="false" text="Accept!">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
       <TextField fx:id="tf_accept" layoutX="204.0" layoutY="178.0" prefHeight="26.0" prefWidth="192.0" promptText="Enter the property name" />
+      <Label layoutX="445.0" layoutY="330.0" text="WARNING!THE RESULT OF THIS ACTION IS PERMANENT!" textFill="RED">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

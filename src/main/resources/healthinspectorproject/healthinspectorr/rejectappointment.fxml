@@ -4,17 +4,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.RejectAppointmentController">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: E0E9F8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthinspectorproject.healthinspectorr.RejectAppointmentController">
    <children>
       <Button fx:id="bt_back" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="bt_reject" layoutX="534.0" layoutY="373.0" mnemonicParsing="false" text="Reject!">
+      <Button fx:id="bt_reject" layoutX="701.0" layoutY="374.0" mnemonicParsing="false" text="Reject!">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -24,5 +25,10 @@
       <Label layoutX="135.0" layoutY="159.0" text="Reason" />
       <TextField fx:id="tf_pn" layoutX="266.0" layoutY="106.0" promptText="Enter the property name" />
       <TextField fx:id="tf_reason" layoutX="267.0" layoutY="155.0" promptText="Enter a reason" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="626.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/Red-cross-of-reject-circle-symbol-on-transparent-background-PNG.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
