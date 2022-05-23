@@ -25,9 +25,11 @@ private PasswordField tf_password;
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         b_login.setOnAction(new EventHandler<ActionEvent>() {
+
+
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.logInUser(event,tf_username.getText(),tf_password.getText());
+                DBUtils.logInUser(event,tf_username.getText(),Cryptography.encriptCypher(tf_password.getText(),1));
             }
         });
         b_signup.setOnAction(new EventHandler<ActionEvent>() {

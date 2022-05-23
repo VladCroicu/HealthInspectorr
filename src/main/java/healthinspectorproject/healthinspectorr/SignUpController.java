@@ -40,7 +40,8 @@ public class SignUpController implements Initializable {
             public void handle(ActionEvent event) {
             String togglename=((RadioButton) toggleGroup.getSelectedToggle()).getText();
             if(!tf_username.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()){
-                DBUtils.signUpUser(event,tf_username.getText(),tf_password.getText(),togglename);
+                String password=Cryptography.encriptCypher(tf_password.getText(),1);
+                DBUtils.signUpUser(event,tf_username.getText(),password,togglename);
             }else {
                 System.out.println("Please fill in all information");
                 Alert alert= new Alert(Alert.AlertType.ERROR);
