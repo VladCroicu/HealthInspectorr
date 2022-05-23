@@ -33,17 +33,25 @@ public class EnterUsername {
 
         String username = tf_username.getText();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("managerpropertyfinder.fxml"));
-        root = loader.load();
+        if(tf_username.getText().trim().isEmpty()){
+            System.out.println("Please fill in all information");
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Please fill in all information");
+            alert.show();
 
-        ManagerPropertyController managerPropertyController = loader.getController();
-        managerPropertyController.displayName(username);
+        }else {
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("managerpropertyfinder.fxml"));
+            root = loader.load();
 
+            ManagerPropertyController managerPropertyController = loader.getController();
+            managerPropertyController.displayName(username);
 
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        }
     }
 }

@@ -159,14 +159,14 @@ public class LoggedInManagerController implements Initializable {
         bt_rejectapp.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "rejectappointment.fxml","AddProperty",null,null);
+                DBUtils.changeScene(event, "rejectappointment.fxml","Reject Appointment",null,null);
 
             }
         });
         bt_acceptapp.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "acceptappointment.fxml","AddProperty",null,null);
+                DBUtils.changeScene(event, "acceptappointment.fxml","Accept Appointment",null,null);
 
             }
         });
@@ -180,7 +180,7 @@ public class LoggedInManagerController implements Initializable {
         bt_deltep.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "deleteproperty.fxml","AddProperty",null,null);
+                DBUtils.changeScene(event, "deleteproperty.fxml","Delete Property",null,null);
 
             }
         });
